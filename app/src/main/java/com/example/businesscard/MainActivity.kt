@@ -144,7 +144,7 @@ fun SmallWidgetOne() {
                 .align(Alignment.BottomCenter)
                 .background(Color.Gray)
         )
-        val textone = "@wtamu"
+        "@wtamu"
     }
 }
 
