@@ -93,7 +93,41 @@ fun CardText(message: String, from: String, modifier: Modifier = Modifier) {
             modifier = Modifier.width(450.dp),
             color = Color.LightGray
         )
+        SmallWidgetOne()
+        WidgetTextOne(message = "@Wtamu")
+        SmallWidgetTwo()
+        WidgetTextTwo(message = "(806)123-4567")
+        SmallWidgetThree()
+        WidgetTextThree(message = "Advasquez2@buffs.wtamu.edu")
+
     }
+}
+
+@Composable
+fun WidgetTextOne(message: String) {
+    Text(
+        text = message,
+        fontSize = 25.sp,
+        color = Color.DarkGray
+    )
+}
+
+@Composable
+fun WidgetTextTwo(message: String) {
+    Text(
+        text = message,
+        fontSize = 25.sp,
+        color = Color.DarkGray
+    )
+}
+
+@Composable
+fun WidgetTextThree(message: String) {
+    Text(
+        text = message,
+        fontSize = 25.sp,
+        color = Color.DarkGray
+    )
 }
 
 @Composable
@@ -108,8 +142,40 @@ fun SmallWidgetOne() {
                 .size(50.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .align(Alignment.BottomCenter)
-                .height(15.dp)
                 .background(Color.Gray)
+        )
+        val textone = "@wtamu"
+    }
+}
+
+@Composable
+fun SmallWidgetTwo() {
+    val image = painterResource(id = R.drawable.phone)
+    Box {
+        Image(
+            painter = image,
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .size(50.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .align(Alignment.BottomCenter)
+        )
+    }
+}
+
+@Composable
+fun SmallWidgetThree() {
+    val image = painterResource(id = R.drawable.email)
+    Box {
+        Image(
+            painter = image,
+            contentDescription = "Advasquez2@buffs.wtamu.edu",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .size(50.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .align(Alignment.BottomCenter)
         )
     }
 }
@@ -121,7 +187,6 @@ fun SmallWidgetOne() {
     fun BusinessCardPreview() {
         BusinessCardTheme {
             CardImage(message = stringResource(R.string.name_text), from = stringResource(R.string.major_text))
-            SmallWidgetOne()
         }
     }
 
